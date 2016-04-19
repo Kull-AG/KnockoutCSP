@@ -3,3 +3,5 @@ typings
 bower_components
 *.js
 src/dist
+
+npm-debug.log
