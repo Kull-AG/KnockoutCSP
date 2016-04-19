@@ -1,3 +1,6 @@
+/// <reference path="typings/node/node.d.ts" />
+/// <reference path="typings/tsd.d.ts" />
+
 import fs = require("fs");
 import yargs = require("yargs");
 
@@ -8,3 +11,4 @@ const regex1 = new RegExp(`data[-]bind=["][^"]*["]`, "g");
 const regex2 = new RegExp(`data[-]bind=['][']*[']`, "g");
 const allMatches = fileContent.match(regex1).concat(fileContent.match(regex2));
 allMatches.forEach(s=> console.log(s));
+

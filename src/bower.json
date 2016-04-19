@@ -1,0 +1,21 @@
+{
+  "name": "KnockoutCSP",
+  "description": "",
+  "main": "main.js",
+  "authors": [
+    "Adrian Ehrsam"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "knockout": "^3.4.0"
+  }
+}

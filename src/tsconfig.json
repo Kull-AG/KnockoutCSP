@@ -4,7 +4,8 @@
         "target": "es5",
         "noImplicitAny": true,
         "suppressImplicitAnyIndexErrors": true,
-        "sourceMap": false
+        "sourceMap": false,
+        "rootDir": "."
     },
     "exclude": [
         "node_modules",
