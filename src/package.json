@@ -12,7 +12,7 @@
     "gulp-typescript": "^2.13.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cd dist && node main.js && node testserver.js"
   },
   "author": "Adrian Ehrsam",
   "license": "MIT"
