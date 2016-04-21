@@ -35,6 +35,6 @@ export function generatePreScriptContent(bindings: string[]) {
                 ko.bindingProvider.instance.bindingCache[key] = obj[key];
             }
         }
-    })
+    })();
     `;
 }
