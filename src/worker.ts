@@ -1,4 +1,4 @@
-
+import ko = require('knockout');
 
 export function parseBindings(content: string) {
     const regex1 = new RegExp(`data[-]bind=["][^"]*["]`, "g");
@@ -7,7 +7,8 @@ export function parseBindings(content: string) {
     return allMatches.filter(s=>s!=null).map(s=> s.substring("data-bind=".length+1, s.length - 1));
 }
 export function getFunctionString(binding: string) {
-    return "function($context, $element) { with($context){with($data||{}){return{" + binding + "}}}  }";
+    let bindPre =  (<any>ko.expressionRewriting).preProcessBindings(binding,  { 'valueAccessors': true });
+    return "function($context, $element) { with($context){with($data||{}){return{" + bindPre + "}}}  }";
 }
 export function getBindingKey(binding: string){
     return binding + "true";
