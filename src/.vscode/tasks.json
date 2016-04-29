@@ -24,6 +24,15 @@
             "problemMatcher": [
                 "$tsc"
             ]
+        },
+		{
+            "taskName": "test",
+            "args": [],
+            "isBuildCommand": false,
+            "isWatching": false,
+            "problemMatcher": [
+                "$tsc"
+            ]
         }
     ]
 }
