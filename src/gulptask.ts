@@ -1,26 +1,43 @@
-import util = require('util');
-import stream = require('stream');
-import worker = require("./worker");
-const Transform = stream.Transform;
 
-class KnockoutCSPTask extends Transform 
-{
-    constructor(opts:stream.TransformOptions){
-        super(opts);
+import through = require('through2');
+import gutil = require('gulp-util');
+import worker = require('./worker');
+import path = require('path');
+const PluginError = gutil.PluginError;
+
+
+
+
+
+// consts
+const PLUGIN_NAME = 'knockout-csp';
+
+// plugin level function (dealing with files)
+function gulpPrefixer() {
+  
+  // creating a stream through which each file will pass
+  var stream = through.obj(function (file, enc, cb) {
+    if (file.isStream()) {
+      this.emit('error', new PluginError(PLUGIN_NAME, 'Streams are not supported!'));
+      return cb();
     }
-    _transform(chunk: any, encoding: string, callback: Function) {
-        const strVl = chunk.toString();//Does not work yet
-        this.push(worker.generatePreScriptContent(worker.parseBindings(strVl)));
-        return  callback();
-        
-        
+
+    if (file.isBuffer()) {
+        const strVl = file.contents.toString();
+        file.contents =new Buffer(worker.generatePreScriptContent(worker.parseBindings(strVl)), 'utf8');
     }
-}
+    
+		file.path = file.path.replace(path.extname(file.path), ".js");
+    // make sure the file goes through the next gulp plugin
+    this.push(file);
 
-// Factory for creating new object mode noop streams
-function gulpPlugin(){
-    return new KnockoutCSPTask({ objectMode: true });
-}
+    // tell the stream engine that we are done with this file
+    cb();
+  });
 
+  // returning the file stream
+  return stream;
+};
 
-export = gulpPlugin;
+// exporting the plugin main function
+export = gulpPrefixer;

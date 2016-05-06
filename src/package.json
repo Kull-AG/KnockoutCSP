@@ -9,7 +9,11 @@
   },
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-typescript": "^2.13.0"
+    "gulp-typescript": "^2.13.0",
+    "gulp-util": "^3.0.7",
+    "through2": "^2.0.1",
+    "typings": "^0.8.1",
+    "yargs": "^4.7.0"
   },
   "scripts": {
     "test": "cd dist && node main.js && node testserver.js"

@@ -1,6 +1,3 @@
-/// <reference path="typings/node/node.d.ts" />
-/// <reference path="typings/tsd.d.ts" />
-
 import fs = require("fs");
 import yargs = require("yargs");
 import worker = require("./worker");
