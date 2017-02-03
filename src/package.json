@@ -1,30 +1,35 @@
 {
-    "name": "src",
-    "version": "1.0.0",
+    "name": "gulp-knockout-csp-precalc",
+    "version": "0.0.2",
     "description": "",
     "dependencies": {
+        "knockout": "^3.4.0",
+        "yargs": "^4.6.0"
+    },
+    "main": "dist/index.js",
+    "files": [
+        "dist/index.js",
+        "dist/worker.js"
+    ],
+    "devDependencies": {
         "@types/gulp-util": "^3.0.30",
         "@types/knockout": "^3.4.39",
         "@types/node": "^7.0.4",
         "@types/through2": "^2.0.32",
         "@types/yargs": "^6.5.0",
-        "knockout": "^3.4.0",
-        "yargs": "^4.6.0"
-    },
-    "files": [
-        "dist/index.js"
-    ],
-    "devDependencies": {
         "gulp": "^3.9.1",
         "gulp-typescript": "^2.13.0",
         "gulp-util": "^3.0.7",
         "through2": "^2.0.1",
-        "typings": "^0.8.1",
-        "yargs": "^4.7.0"
+        "ts-node": "^2.0.0",
+        "typescript": "^2.1.5",
+        "typings": "^0.8.1"
     },
     "scripts": {
-        "test": "cd dist && node main.js && node testserver.js"
+        "test": "tsc && cd dist && gulp && node testserver.js",
+        "build": "tsc"
     },
+    "repository": "aersamkull/knockoutcsp",
     "author": "Adrian Ehrsam",
     "license": "MIT"
 }

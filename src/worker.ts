@@ -3,7 +3,7 @@ import ko = require('knockout');
 export function parseBindings(content: string) {
     const regex1 = new RegExp(`data[-]bind=["][^"]*["]`, "g");
     const regex2 = new RegExp(`data[-]bind=['][']*[']`, "g");
-    const allMatches = content.match(regex1).concat(content.match(regex2));
+    const allMatches = (content.match(regex1)||[]).concat(content.match(regex2)||[]);
     return allMatches.filter(s=>s!=null).map(s=> s.substring("data-bind=".length+1, s.length - 1));
 }
 export function getFunctionString(binding: string) {

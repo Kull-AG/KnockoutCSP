@@ -27,7 +27,7 @@ function gulpPrefixer() {
         file.contents =new Buffer(worker.generatePreScriptContent(worker.parseBindings(strVl)), 'utf8');
     }
     
-		file.path = file.path.replace(path.extname(file.path), ".js");
+	file.path = file.path.replace(path.extname(file.path), ".js");
     // make sure the file goes through the next gulp plugin
     this.push(file);
 
