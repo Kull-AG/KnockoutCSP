@@ -1,8 +1,15 @@
 # KnockoutCSP
 A Preprocessor for Knockout in combination with CSP
 
-## Possible Roadmap
+Use it with gulp:
+```JavaScript
+var gulp = require('gulp');
+var csp = require('gulp-knockout-csp-precalc');
 
-- Gulp support
-- Minification support
-- Automated Testing
+gulp.task('default', function () {
+    return gulp.src('../test/*.html')
+        .pipe(csp())
+        .pipe(gulp.dest('./'));
+});
+
+```
