@@ -7,11 +7,5 @@
         "sourceMap": false,
         "outDir": "dist",
         "rootDir": "."
-    },
-    "files": [
-        "gulptask.ts",
-        "worker.ts",
-        "main.ts",
-        "typings/main.d.ts"
-    ]
+    }
 }
