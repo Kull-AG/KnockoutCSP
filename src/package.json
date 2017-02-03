@@ -1,6 +1,6 @@
 {
     "name": "gulp-knockout-csp-precalc",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "",
     "dependencies": {
         "knockout": "^3.4.0",
