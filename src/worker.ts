@@ -31,7 +31,7 @@ export function generatePreScriptContent(bindings: string[]) {
 
 
     return `
-    (()=>{
+    (function () {
         var obj = ${generateKnockoutStr(bindings)};
         var knockoutCache = ko.bindingProvider.instance.bindingCache;
         if(!knockoutCache) {
