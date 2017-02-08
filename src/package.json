@@ -1,6 +1,6 @@
 {
     "name": "gulp-knockout-csp-precalc",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "description": "",
     "dependencies": {
         "knockout": "^3.4.0",
@@ -27,7 +27,7 @@
     },
     "scripts": {
         "test": "tsc && cd dist && gulp && node testserver.js",
-        "build": "tsc"
+        "build": "tsc && cd dist && gulp"
     },
     "repository": "aersamkull/knockoutcsp",
     "author": "Adrian Ehrsam",
