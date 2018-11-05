@@ -13,3 +13,5 @@ gulp.task('default', function () {
 });
 
 ```
+
+Requires a little change to Knockout, see [Knockout Fork](https://github.com/kull-ag/knockout), if you used in combination with Custom Element Bindings.
