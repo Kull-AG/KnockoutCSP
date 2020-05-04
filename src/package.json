@@ -3,8 +3,8 @@
     "version": "0.0.5",
     "description": "",
     "dependencies": {
-        "knockout": "^3.4.0",
-        "yargs": "^4.6.0"
+        "knockout": "^3.5.1",
+        "yargs": "^15.3.1"
     },
     "main": "dist/index.js",
     "files": [
@@ -12,18 +12,17 @@
         "dist/worker.js"
     ],
     "devDependencies": {
-        "@types/gulp-util": "^3.0.30",
-        "@types/knockout": "^3.4.39",
-        "@types/node": "^7.0.4",
-        "@types/through2": "^2.0.32",
-        "@types/yargs": "^6.5.0",
-        "gulp": "^3.9.1",
-        "gulp-typescript": "^2.13.0",
-        "gulp-util": "^3.0.7",
-        "through2": "^2.0.1",
-        "ts-node": "^2.0.0",
-        "typescript": "^2.1.5",
-        "typings": "^0.8.1"
+        "@types/gulp-util": "^3.0.34",
+        "@types/node": "^13.13.4",
+        "@types/through2": "^2.0.34",
+        "@types/yargs": "^15.0.4",
+        "gulp": "^4.0.2",
+        "gulp-typescript": "^5.0.1",
+        "gulp-util": "^3.0.8",
+        "through2": "^3.0.1",
+        "ts-node": "^8.10.1",
+        "typescript": "^3.8.3",
+        "typings": "^2.1.1"
     },
     "scripts": {
         "test": "tsc && cd dist && gulp && node testserver.js",
